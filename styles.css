@@ -1,0 +1,804 @@
+html {
+    scroll-behavior: smooth;
+}
+html, body {
+    overflow-x: hidden;
+}
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: white ; /* Add a fallback background color */
+        }
+
+        header {
+            position: fixed; /* Make the header fixed */
+            width: 100%; /* Make sure it spans the full width */
+            top: 0; /* Align to the top */
+            z-index: 1000; /* Ensure it stays on top of other content */
+            background-color: rgba(0, 0, 0, 0.7); /* Add transparency to the top bar */
+            color: #fff;
+        }
+
+        .top-bar {
+            background-color: rgba(0, 0, 0, 0.7); /* Add transparency to the top bar */
+            color: #fff;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .logo-nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 90px;
+            padding: 2px;
+            background-color: rgb(230, 209, 209);
+            background-size: cover;
+            background-position: center;
+            color: black;
+        }
+
+        .logo {
+            font-size: 2px;
+            font-weight: bold;
+            color: black;
+            position: relative;
+            left: 80px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav li {
+            margin-right: 40px;
+            padding: 0 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .get-quote {
+            background-color: #ffc107;
+            color: #333;
+            border: none;
+            padding: 10px 20px;
+            font-weight: bold;
+        }
+
+        .main-container {
+            position: relative; /* Ensure relative positioning for pseudo-element */
+            display: flex;
+            justify-content: center; /* Center align the container */
+            padding: 80px;
+            background-image: url('images/back.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            margin-top: 130px; /* Add margin to push the content below the fixed header */
+        }
+
+        .main-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity here */
+        }
+
+        .main-content {
+            position: relative; /* Ensure the content is positioned relative to its parent */
+            z-index: 1; /* Set a higher z-index to bring the content in front */
+            flex: 1;
+            padding-right: 20px;
+            text-align: left; /* Align text to the left */
+        }
+
+        .main-content h1,
+        .main-content button {
+            position: relative; /* Ensure the heading and button are positioned relative to their parent */
+            z-index: 1; /* Set a higher z-index to bring the heading and button in front */
+        }
+
+        .main-content h1 {
+            font-size: 50px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .abc {
+            color: #ffc107;
+            font-size: 50px;
+        }
+
+        .cdf {
+            font-size: 30px;
+        }
+
+        .main-content p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .main-content button {
+            background-color: #ffc107;
+            color: #333;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            display: block;
+            margin-bottom: 20px; /* Add margin to separate from the highlighted info */
+        }
+
+        /* Highlighted info styles */
+        .highlighted-info {
+            display: flex;
+            justify-content: flex-start; /* Align to the left */
+            align-items: center;
+            padding: 10px;
+            background-color: white;
+        }
+
+        .highlighted-info img {
+            position: relative;
+            top: -265px;
+            padding: 10px 10px;
+            width: 720px;
+        }
+
+        .award {
+            position: relative;
+            top: -305px;
+            font-size: 1.5rem;
+            color: white;
+            left: -650px;
+        }
+
+        /* Form Section Styles */
+        .form-section {
+            position: relative; /* Ensure the form section is positioned relative to its parent */
+            z-index: 1; /* Set a higher z-index to bring the form section in front */
+            background-color: rgba(255, 255, 255, 0.9); /* Adjust transparency */
+            padding: 40px; /* Increased padding for better spacing */
+            border-radius: 10px; /* Added border radius for a softer look */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            flex: 1;
+            margin-bottom: 40px; /* Added margin for spacing */
+            max-width: 500px; /* Limit the form width */
+            text-align: center; /* Center align text */
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .form-section:hover {
+            transform: translateY(-5px); /* Lift the form section slightly on hover */
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.2); /* Add a subtle shadow on hover */
+        }
+
+        .form-section h2 {
+            font-size: 24px; /* Adjusted font size for better hierarchy */
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .form-section input[type="text"],
+        .form-section input[type="email"],
+        .form-section input[type="tel"] {
+            width: calc(100% - 30px); /* Adjusted width to leave space for padding */
+            padding: 15px; /* Increased padding for better spacing */
+            margin-bottom: 15px; /* Reduced margin for tighter spacing */
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            transition: border-color 0.3s;
+        }
+
+        .form-section input[type="text"]:focus,
+        .form-section input[type="email"]:focus,
+        .form-section input[type="tel"]:focus {
+            border-color: #ffc107; /* Change border color on focus */
+        }
+
+        .form-section label {
+            display: block;
+            margin-bottom: 10px; /* Reduced margin for tighter spacing */
+            font-size: 14px; /* Adjusted font size for better readability */
+            color: #333;
+        }
+
+        .form-section button[type="submit"] {
+            background-color: #ffc107; /* Matched button color from the image */
+            color: #333;
+            border: none;
+            padding: 15px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 4px; /* Added border radius for a consistent look */
+            transition: background-color 0.3s;
+        }
+
+        .form-section button[type="submit"]:hover {
+            background-color: #ff9800; /* Change button color on hover */
+        }
+
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .checkbox-container label {
+            margin-left: 10px;
+            font-size: 14px; /* Adjusted font size for better readability */
+            color: #333;
+        }
+
+        .slider {
+            position: relative;
+            width: 40px;
+            height: 20px;
+            background-color: #ccc;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .slider::before {
+            content: '';
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background-color: white;
+            top: 1px;
+            left: 1px;
+            transition: transform 0.3s;
+        }
+
+        .slider.checked {
+            background-color: #4caf50;
+        }
+
+        .slider.checked::before {
+            transform: translateX(20px);
+        }
+
+        /* New Content Styles */
+        .new-content {
+            padding: 20px;
+            background-color: white;
+            color: #333;
+            margin: 0; /* Remove top margin */
+            display: flex;
+        }
+
+        .new-content .text {
+            flex: 0 1 50%; /* Reduce the width of the text section */
+        }
+        .new-content .text h2{
+            position: relative;
+            top:-390px;
+            font-size: 45px;
+            color: rgb(199, 17, 17);
+            left:45px;
+        }
+
+        .new-content img {
+            flex: 0 1 50%; /* Increase the width of the image */
+            width: 490px;
+            margin-left: 20px;
+            border-radius: 50px;
+            height:760px;
+            position: relative;
+            left:100px;
+            top:-320px;
+
+        }
+
+        .whatsappimg {
+            position: relative;
+            top: -5px;
+            left: 2px;
+        }
+
+        .what {
+            color: black;
+            left: 2px;
+            top: -5px;
+            position: relative;
+        }
+        .btn1{
+            width:200px;
+            height:50px;
+            top:405px;
+            position: relative;
+            left:-1250px;
+            border-radius: 30px;
+            background-color: #ff9800;;
+        }
+        /* Container for the three div sections */
+.three-divs-container {
+    display: flex;
+    justify-content: space-between; /* Space out the divs evenly */
+    padding: 10px; /* Add some padding for spacing */
+    height:600px;
+    background-color: #edb2b2; /* Background color for visibility */
+    width:100%;
+    margin: 0 auto;
+    position:relative;
+    top:-120px;
+}
+
+/* Individual div sections */
+.div-section {
+    flex: 0 0 30%;
+    background-color: white; /* Background color for the sections */
+    top:100px;
+    position:relative;
+    height: 420px;
+    padding: 20px; /* Padding inside each section */
+    margin: 10px; /* Margin between the sections */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for a lifted effect */
+    border-radius: 8px; /* Rounded corners */
+}
+
+.div-section img {
+    font-size: 24px; /* Adjusted font size for headings */
+    color: #333; /* Heading color */
+    margin-bottom: 30px; /* Spacing below heading */
+    align-items: center;margin-left: -10px;;
+}
+
+.div-section p {
+    font-size: 25px; /* Adjusted font size for paragraphs */
+    color: #232323; /* Paragraph text color */
+    line-height: 1.5; /* Line height for readability */
+    position:relative;
+    top:-19px;
+}
+.image-container {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            background-color: white;
+            
+        }
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            
+        }
+        .image-container::after {
+            content: "";
+            position: absolute;
+            top: 0px;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(37, 33, 33, 0.559); /* Adjust opacity as needed */
+            z-index: 1;
+        }
+        .heading1 {
+            color: white;
+            font-size: 70px;
+            position: absolute;
+            top: 10px; /* Adjust as needed */
+            width: 100%;
+            text-align: center;
+            z-index: 2; /* Higher than the overlay */
+        }
+        .button-container1 {
+            position: absolute;
+            top: 260px; /* Adjust as needed */
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2; /* Higher than the overlay */
+        }
+        .button1 {
+            width: 250px;
+            height: 60px;
+            background-color: #ffa407;
+            border-radius: 20px;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border: black 1px;
+        }
+        .content {
+            padding: 50px;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .content h2 {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+
+        .career {
+            position: relative;
+            display: inline-block; /* Ensures the overlay covers only the content within the div */
+        }
+
+        .career img {
+            display: block; /* Removes the small gap under the image */
+            width: 100%; /* Ensures the image takes the full width of the parent */
+            height: auto; /* Maintains the aspect ratio of the image */
+        }
+
+        .career::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(11, 11, 11, 0.732); /* Black background with 50% opacity */
+            pointer-events: none; /* Ensures the overlay doesn't interfere with any user interactions */
+        }
+        .career h1 {
+            position: absolute;
+            top: 8%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            margin: 0;
+            font-size: 4em;
+            z-index: 1; /* Ensures the heading appears above the overlay */
+        }
+
+        .career .vertical-line {
+            position: absolute;
+            top: 54%;
+            left: 50%; /* Adjust this value as needed */
+            transform: translateY(-50%);
+            width: 2px;
+            height: 75%; /* Adjust this value as needed */
+            background: white;
+            z-index: 1; /* Ensures the line appears above the overlay */
+        }
+        .career .horizontal-line {
+            position: absolute;
+            top: 270px;
+            left: 670px;
+            transform: translateY(-50%);
+            width: 90px;
+            height: 2px;
+            background: white;
+            z-index: 1;
+        }
+        .career .horizontal-line2 {
+            position: absolute;
+            top: 520px;
+            left: 670px;
+            transform: translateY(-50%);
+            width: 90px;
+            height: 2px;
+            background: white;
+            z-index: 1;
+        }
+        .career .horizontal-line4 {
+            position: absolute;
+            top: 760px;
+            left: 670px;
+            transform: translateY(-50%);
+            width: 90px;
+            height: 2px;
+            background: white;
+            z-index: 1;
+        }
+        .career .horizontal-line1 {
+            position: absolute;
+            top: 390px;
+            left: 760px;
+            transform: translateY(-50%);
+            width: 90px;
+            height: 2px;
+            background: white;
+            z-index: 1;
+        }
+        .career .horizontal-line3 {
+            position: absolute;
+            top: 640px;
+            left: 760px;
+            transform: translateY(-50%);
+            width: 90px;
+            height: 2px;
+            background: white;
+            z-index: 1;
+        }
+        .career .horizontal-line5{
+            position: absolute;
+            top: 870px;
+            left: 760px;
+            transform: translateY(-50%);
+            width: 90px;
+            height: 2px;
+            background: white;
+            z-index: 1;
+        }
+        .career .h1 {
+            position: absolute;
+            top: 270px;
+            left: 240px;
+            transform: translateY(-50%);
+            width: 410px;
+            height: 80px;
+            background:#fdb029;
+            z-index: 1;
+            font-size: 23px;
+            align-items: center; 
+            padding-top:13px;
+            padding-bottom: 8px;
+            padding-left:20px;
+            border-radius: 30px;
+        }
+        .career .h3 {
+            position: absolute;
+            top: 520px;
+            left: 240px;
+            transform: translateY(-50%);
+            width: 410px;
+            height: 80px;
+            background:#fdb029;
+            z-index: 1;
+            font-size: 23px;
+            align-items: center; 
+            padding-top:13px;
+            padding-bottom: 8px;
+            padding-left:20px;
+            border-radius: 30px;
+        }
+        .career .h5 {
+            position: absolute;
+            top: 760px;
+            left: 240px;
+            transform: translateY(-50%);
+            width: 410px;
+            height: 80px;
+            background:#fdb029;
+            z-index: 1;
+            font-size: 23px;
+            align-items: center; 
+            padding-top:13px;
+            padding-bottom: 8px;
+            padding-left:20px;
+            border-radius: 30px;
+        }
+        .career .h2 {
+            position: absolute;
+            top: 390px;
+            left: 850px;
+            transform: translateY(-50%);
+            width: 410px;
+            height: 80px;
+            background:#fdb029;
+            z-index: 1;
+            font-size: 23px;
+            align-items: center; 
+            padding-top:18px;
+            padding-bottom: 0px;
+            padding-left:20px;
+            border-radius: 30px;
+        }
+        .career .h4 {
+            position: absolute;
+            top: 630px;
+            left: 850px;
+            transform: translateY(-50%);
+            width: 410px;
+            height: 80px;
+            background:#fdb029;
+            z-index: 1;
+            font-size: 23px;
+            align-items: center; 
+            padding-top:18px;
+            padding-bottom: 10px;
+            padding-left:20px;
+            border-radius: 30px;
+        }
+        .career .h6 {
+            position: absolute;
+            top: 870px;
+            left: 850px;
+            transform: translateY(-50%);
+            width: 410px;
+            height: 80px;
+            background:#fdb029;
+            z-index: 1;
+            font-size: 23px;
+            align-items: center; 
+            padding-top:18px;
+            padding-bottom: 0px;
+            padding-left:20px;
+            border-radius: 30px;
+            padding-right: 8px;
+        }
+
+        .faq-container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+        .faq-header {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 34px;
+            font-weight: bold;
+        }
+        .faq-question {
+            cursor: pointer;
+            padding: 10px;
+            background-color: #f1f1f1;
+            border: 1px solid #ccc;
+            margin-bottom: 5px;
+            font-size: 20px;
+            
+        }
+        .faq-answer {
+            display: none;
+            padding: 10px;
+            border-left: 3px solid #007BFF;
+            background-color: #f9f9f9;
+        }
+        .contact-us-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.contact-us-form {
+    width: 50%;
+    position:relative;
+    left:120px;
+}
+
+.contact-us-form h1 {
+    color: #d12c2f;
+    font-size: 40px;
+}
+
+.contact-us-form p {
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.form-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.form-group input, .form-group textarea {
+    width: 48%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #d12c2f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #b12526;
+}
+
+.map {
+    width: 50%;
+    height:30%
+}  
+footer {
+    background: url('images/abc.jpg') no-repeat center center/cover;
+    position: relative;
+    color: white;
+}
+
+.footer-overlay {
+    background-color: rgba(0, 0, 0, 0.432);
+    padding: 40px 50px 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    position: relative;
+    z-index: 2;
+}
+
+.footer-left,
+.footer-middle,
+.footer-right {
+    flex: 1;
+}
+
+.logo-container {
+    background-color: white;
+    padding: 10px;
+    display: inline-block;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    width:200px;
+    justify-content: center;
+}
+
+
+.footer-logo {
+    max-width: 150px;
+    margin-bottom: 10px;
+    z-index: 1;
+    position:relative;
+    left:15px;
+    top:10px;
+    
+}
+
+.footer-middle h3,
+.footer-right h3 {
+    margin-top: 0;
+}
+
+.footer-middle ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-middle ul li {
+    margin-bottom: 10px;
+}
+
+.footer-middle ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-middle ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer-right p i {
+    margin-right: 10px;
+}
+
+.footer-bottom {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 10px;
+    color: white;
+    position: relative;
+    z-index: 2;
+}
+
+.footer-overlay::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+} 
